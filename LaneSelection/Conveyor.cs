@@ -75,8 +75,7 @@ namespace LaneSelection
 
             for (int i = 0; i < destinationLanes.Count; i++)
             {
-                double percent = (double)(destinationLanes[i].LoadsDelivered) / (double)destinationLanes[i].AttemptsToAddLoad;
-                strBuild.Append(String.Format("|{0,7:P2}", percent));
+                strBuild.Append(String.Format("|{0,7:P2}", destinationLanes[i].GetSuccessRate()));
             }
             strBuild.Append("|\n");
             for (int i = 0; i <= destinationLanes.Count; i++)

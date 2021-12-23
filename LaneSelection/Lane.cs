@@ -32,5 +32,9 @@ namespace LaneSelection
                 return true;
             }
         }
+        public double GetSuccessRate()
+        {
+            return (double)LoadsDelivered / (double)AttemptsToAddLoad;
+        }
     }
 }
