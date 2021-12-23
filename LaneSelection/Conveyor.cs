@@ -71,6 +71,18 @@ namespace LaneSelection
             {
                 strBuild.Append("+-------");
             }
+            strBuild.Append("+\n|%Target");
+
+            for (int i = 0; i < destinationLanes.Count; i++)
+            {
+                double percent = (double)(destinationLanes[i].LoadsDelivered) / (double)destinationLanes[i].AttemptsToAddLoad;
+                strBuild.Append(String.Format("|{0,7:P2}", percent));
+            }
+            strBuild.Append("|\n");
+            for (int i = 0; i <= destinationLanes.Count; i++)
+            {
+                strBuild.Append("+-------");
+            }
             strBuild.Append("+\n");
             return strBuild.ToString();
         }
